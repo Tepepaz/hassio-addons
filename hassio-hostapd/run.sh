@@ -76,7 +76,7 @@ nmcli dev set ${INTERFACE} managed no
 echo "Network interface set to ${INTERFACE}"
 
 # Configure iptables to enable/disable internet
-INTERNET_IF="eth0"
+INTERNET_IF="enp0s10"
 
 RULE_3="POSTROUTING -o ${INTERNET_IF} -j MASQUERADE"
 RULE_4="FORWARD -i ${INTERNET_IF} -o ${INTERFACE} -m state --state RELATED,ESTABLISHED -j ACCEPT"
